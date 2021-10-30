@@ -1,0 +1,29 @@
+//
+// Created by AC on 10/30/2021.
+//
+
+#ifndef MAGAZINE_JOCURI_VIDEO_APLICATIE_H
+#define MAGAZINE_JOCURI_VIDEO_APLICATIE_H
+
+#include <iostream>
+#include <string>
+#include "magazin.h"
+#include <cmath>
+
+using namespace std;
+
+class aplicatie {
+    string nume;
+    vector<magazin> magazine;
+public:
+    void adauga(magazin m);
+
+    aplicatie(const string &nume);
+
+    friend ostream &operator<<(ostream &os, const aplicatie &aplicatie);
+
+    void distanta_din_centru_pana_la_magazin(const aplicatie &aplicatie);
+};
+
+
+#endif //MAGAZINE_JOCURI_VIDEO_APLICATIE_H
