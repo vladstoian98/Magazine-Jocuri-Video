@@ -22,7 +22,7 @@ public:
 
     friend ostream &operator<<(ostream &os, const aplicatie &aplicatie);
 
-    void distanta_din_centru_pana_la_magazin(const aplicatie &aplicatie);
+    float distanta_din_centru_pana_la_magazin(float x, float y, string oras);
 };
 
 

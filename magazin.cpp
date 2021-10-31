@@ -32,11 +32,11 @@ ostream &operator<<(ostream &os, const magazin &magazine) {
     return os;
 }
 
-void magazin::pret_total(const magazin &magazine) {
+int magazin::pret_total() {
     int s = 0;
-    for(const auto & j : magazine.jocuri)
+    for(const auto & j : jocuri)
     {
-        s = s + j.getPret() * magazine.copii_jocuri;
+        s = s + j.getPret() *  copii_jocuri;
     }
-    cout << s << endl << endl;
+    return s;
 }

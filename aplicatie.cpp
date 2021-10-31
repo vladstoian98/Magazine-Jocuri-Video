@@ -18,15 +18,15 @@ ostream &operator<<(ostream &os, const aplicatie &aplicatie) {
     return os;
 }
 
-void aplicatie::distanta_din_centru_pana_la_magazin(const aplicatie &aplicatie) {
+float aplicatie::distanta_din_centru_pana_la_magazin(float x, float y, string oras) {
     float distanta;
-    for(const auto & m : aplicatie.magazine)
+    for(const auto & m : magazine)
     {
-        if(m.getOras() == "Constanta")
+        if(m.getOras() == oras)
         {
-            distanta =  sqrt(pow(m.getCoordonataX(), 2) + pow(m.getCoordonataY(), 2));
-            cout << distanta << endl;
+            distanta =  sqrt(pow(m.getCoordonataX() - x, 2) + pow(m.getCoordonataY() - y, 2));
+
         }
     }
-    cout << endl;
+   return distanta;
 }

@@ -32,7 +32,7 @@ public:
 
     friend ostream &operator<<(ostream &os, const magazin &magazine);
 
-    void pret_total(const magazin &magazine);
+    int pret_total();
 
 };
 

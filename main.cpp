@@ -46,9 +46,9 @@ int main() {
     aplicatie a = aplicatie("Gamestop");
     a.adauga(m1); a.adauga(m2); a.adauga(m3);
 
-    m1.pret_total(m1);
+    cout << m3.pret_total() << endl << endl;
 
-    a.distanta_din_centru_pana_la_magazin(a);
+    cout << a.distanta_din_centru_pana_la_magazin(0, 0, "Constanta") << endl << endl;
 
     cout << a;
 
