@@ -14,6 +14,7 @@ personaj &personaj::operator=(const personaj &copie) {
     this->nume = copie.nume;
     this->inaltime = copie.inaltime;
     this->rasa = copie.rasa;
+    return *this;
 }
 
 personaj::personaj(const personaj &copie) {
