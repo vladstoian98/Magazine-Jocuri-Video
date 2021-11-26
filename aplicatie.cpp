@@ -30,3 +30,5 @@ float aplicatie::distanta_din_centru_pana_la_magazin(float x, float y, string or
     }
    return distanta;
 }
+
+

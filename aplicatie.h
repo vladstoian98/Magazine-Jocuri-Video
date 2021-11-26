@@ -18,6 +18,8 @@ class aplicatie {
 public:
     void adauga(magazin m);
 
+
+
     aplicatie(const string &nume);
 
     friend ostream &operator<<(ostream &os, const aplicatie &aplicatie);

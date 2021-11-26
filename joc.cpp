@@ -16,8 +16,11 @@ int joc::getPret() const {
 
 ostream &operator<<(ostream &os, const joc &jocuri) {
     os << jocuri.nume << " " << jocuri.pret << " " << endl << endl;
-    for(const auto & p : jocuri.personaje)
-        os << p ;
+    for (const auto &p: jocuri.personaje)
+        os << p;
     os << endl;
     return os;
 }
+
+
+
