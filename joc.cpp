@@ -32,7 +32,7 @@ joc &joc::operator=(joc copie) {
     return *this;
 }
 
-void swap(joc &j1, job &j2) {
+void swap(joc &j1, joc &j2) {
     using std::swap;
     swap(j1.personaje, j2.personaje);
     swap(j1.nume, j2.nume);
