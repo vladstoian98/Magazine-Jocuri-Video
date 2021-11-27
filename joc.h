@@ -30,6 +30,8 @@ public:
 
     joc &operator=(joc copie);
 
+    friend void swap(joc &j1, joc &j2);
+
 };
 
 
