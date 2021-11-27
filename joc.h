@@ -24,7 +24,7 @@ public:
 
     int getPret() const;
 
-    friend ostream &operator<<(ostream &os, const joc &jocuri);
+    friend ostream &operator<<(ostream &os, const joc &joc);
 
     joc(const joc &copie);
 
@@ -32,6 +32,9 @@ public:
 
     friend void swap(joc &j1, joc &j2);
 
+    ~joc();
+
+    void welcome_message();
 };
 
 

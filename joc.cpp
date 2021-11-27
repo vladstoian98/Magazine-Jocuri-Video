@@ -17,7 +17,7 @@ int joc::getPret() const {
 ostream &operator<<(ostream &os, const joc &jocuri) {
     os << jocuri.nume << " " << jocuri.pret << " " << endl << endl;
     for (const auto &p: jocuri.personaje)
-        os << p;
+        os << *p;
     os << endl;
     return os;
 }
@@ -37,6 +37,15 @@ void swap(joc &j1, joc &j2) {
     swap(j1.personaje, j2.personaje);
     swap(j1.nume, j2.nume);
     swap(j1.pret, j2.pret);
+}
+
+joc::~joc() {}
+
+void joc::welcome_message() {
+    for(auto &personaj: personaje) {
+        cout << "Bine ai venit in jocul " << nume << "!\n";
+        personaj->play();
+    }
 }
 
 
