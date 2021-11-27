@@ -44,7 +44,7 @@ joc::~joc() {}
 void joc::welcome_message() {
     for(auto &personaj: personaje) {
         cout << "Bine ai venit in jocul " << nume << "!\n";
-        personaj->play();
+        personaj->welcome_message();
     }
 }
 
