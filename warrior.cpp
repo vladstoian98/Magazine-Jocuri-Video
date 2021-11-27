@@ -11,9 +11,7 @@ void warrior::welcome_message() const {
     cout << "Welcome warrior! Your weapon of choice is " << weapon << ".\n";
 }
 
-warrior::~warrior() {
-
-}
+warrior::~warrior() {}
 
 shared_ptr<personaj> warrior::clone() const {
     return make_shared <warrior>(*this);
@@ -22,7 +20,8 @@ shared_ptr<personaj> warrior::clone() const {
 void warrior::afis(ostream &os) const {
     os << nivel << " " << weapon << " ";
     personaj::afis(os);
-
 }
+
+
 
 

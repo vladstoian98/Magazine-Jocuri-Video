@@ -22,5 +22,14 @@ ostream &operator<<(ostream &os, const joc &jocuri) {
     return os;
 }
 
+joc::joc(const joc &copie) : nume(copie.nume), pret(copie.pret) {
+    for(const auto &personaj: copie.personaje)
+        personaje.push_back(personaj->clone());
+}
+
+joc &joc::operator=(joc copie) {
+    swap(*this, copie);
+    return *this;
+}
 
 

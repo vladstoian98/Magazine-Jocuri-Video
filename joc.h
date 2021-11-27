@@ -8,13 +8,14 @@
 #include "personaj.h"
 #include <vector>
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
 class joc {
     string nume;
     int pret;
-    vector<personaj> personaje;
+    vector<shared_ptr<personaj>> personaje;
 public:
     joc();
     void adauga(personaj p);
@@ -24,6 +25,10 @@ public:
     int getPret() const;
 
     friend ostream &operator<<(ostream &os, const joc &jocuri);
+
+    joc(cont joc &copie);
+
+    jov &operator=(joc copie);
 
 };
 
