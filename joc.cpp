@@ -4,8 +4,8 @@
 
 #include "joc.h"
 
-void joc::adauga(personaj p) {
-    personaje.push_back(p);
+void joc::adauga(const personaj &personaj_) {
+    personaje.push_back(personaj_.clone());
 }
 
 joc::joc(const string &nume, int pret) : nume(nume), pret(pret) {}

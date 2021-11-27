@@ -18,7 +18,7 @@ class joc {
     vector<shared_ptr<personaj>> personaje;
 public:
     joc();
-    void adauga(personaj p);
+    void adauga(const personaj &personaj_);
 
     joc(const string &nume, int pret);
 
@@ -26,9 +26,9 @@ public:
 
     friend ostream &operator<<(ostream &os, const joc &jocuri);
 
-    joc(cont joc &copie);
+    joc(const joc &copie);
 
-    jov &operator=(joc copie);
+    joc &operator=(joc copie);
 
 };
 
