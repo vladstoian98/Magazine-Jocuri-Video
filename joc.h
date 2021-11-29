@@ -17,7 +17,6 @@ class joc {
     int pret;
     vector<shared_ptr<personaj>> personaje;
 public:
-    joc();
     void adauga(const personaj &personaj_);
 
     joc(const string &nume, int pret);

@@ -7,20 +7,31 @@
 #include "joc.h"
 #include "magazin.h"
 #include "aplicatie.h"
+#include "warrior.h"
+#include "archer.h"
+#include "mage.h"
+#include "eroare_personaj.h"
 
 using namespace std;
 
 int main() {
-    personaj p1 = personaj("Gimli", 145, "Dwarf");
-    personaj p2 = personaj("Ligolas", 185, "Elf");
-    personaj p3 = personaj("Gandalf", 190, "Human");
-    personaj p4 = personaj("Golum", 120, "unknown");
-    personaj p5 = personaj("Vlad", 190, "Human");
-    personaj p6 = personaj("Anca", 170, "Human");
-    personaj p7 = personaj("Ashe", 170, "Human");
-    personaj p8 = personaj("Trundle", 250, "Troll");
-    personaj p9 = personaj("Alex", 170, "Human");
-    personaj p10 = personaj("George", 180, "Gobilin");
+
+    try {
+        warrior p1 = warrior("Gimli", 145, "Dwarf", 15, "Frost staff");
+        archer p2 = archer("Ligolas", 185, "Elf", 21, "Bow of swiftness");
+        mage p3 = mage("Gandalf", 190, "Human", 13, "Earth staff");
+        warrior p4 = warrior("Golum", 120, "unknown", 61, "Fists");
+        warrior p5 = warrior("Vlad", 190, "Human", 99, "Terra sword");
+        mage p6 = mage("Anca", 170, "Human", 99, "Terra prisma");
+        archer p7 = archer("Ashe", 170, "Human", 31, "Frost bow");
+        warrior p8 = warrior("Trundle", 250, "Troll", 51, "Frost club");
+        warrior p9 = warrior("Alex", 170, "Human", 11, "Diamond sword");
+        archer p10 = archer("George", 180, "Gobilin", 2, "Beginne
+    }
+    catch(eroare_personaj &error) {
+        cout << error.what() << endl;
+    }
+
 
     joc j1 = joc("Lord of the Rings Game", 60);
     j1.adauga(p1); j1.adauga(p2); j1.adauga(p3); j1.adauga(p4);
@@ -54,24 +65,3 @@ int main() {
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

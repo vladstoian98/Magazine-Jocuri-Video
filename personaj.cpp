@@ -4,6 +4,7 @@
 
 #include <vector>
 #include "personaj.h"
+#include "eroare_personaj.h"
 
 int personaj::id_max = 1;
 
@@ -15,6 +16,10 @@ void personaj::afis(ostream &os) const{
 personaj::personaj(const string &nume, int inaltime, const string &rasa): nume(nume),
                     inaltime(inaltime), rasa(rasa), id(id_max){
     id_max++;
+    if(inaltime < 100 || inaltime > 250)
+        throw inaltime_invalida();
+    if(rasa == "Death knight" || rasa == "Dragon")
+        throw rase_nefolosite();
 }
 
 personaj &personaj::operator=(const personaj &copie) {
