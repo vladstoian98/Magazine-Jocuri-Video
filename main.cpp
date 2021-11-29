@@ -14,24 +14,17 @@
 
 using namespace std;
 
-int main() {
-
-    try {
-        warrior p1 = warrior("Gimli", 145, "Dwarf", 15, "Frost staff");
-        archer p2 = archer("Ligolas", 185, "Elf", 21, "Bow of swiftness");
-        mage p3 = mage("Gandalf", 190, "Human", 13, "Earth staff");
-        warrior p4 = warrior("Golum", 120, "unknown", 61, "Fists");
-        warrior p5 = warrior("Vlad", 190, "Human", 99, "Terra sword");
-        mage p6 = mage("Anca", 170, "Human", 99, "Terra prisma");
-        archer p7 = archer("Ashe", 170, "Human", 31, "Frost bow");
-        warrior p8 = warrior("Trundle", 250, "Troll", 51, "Frost club");
-        warrior p9 = warrior("Alex", 170, "Human", 11, "Diamond sword");
-        archer p10 = archer("George", 180, "Gobilin", 2, "Beginne
-    }
-    catch(eroare_personaj &error) {
-        cout << error.what() << endl;
-    }
-
+void f1() {
+    warrior p1 = warrior("Gimli", 145, "Dwarf", 15, "Frost staff");
+    archer p2 = archer("Ligolas", 185, "Elf", 21, "Bow of swiftness");
+    mage p3 = mage("Gandalf", 190, "Human", 13, "Earth staff");
+    warrior p4 = warrior("Golum", 120, "unknown", 61, "Fists");
+    warrior p5 = warrior("Vlad", 190, "Human", 99, "Terra sword");
+    mage p6 = mage("Anca", 170, "Human", 99, "Terra prisma");
+    archer p7 = archer("Ashe", 170, "Human", 31, "Frost bow");
+    warrior p8 = warrior("Trundle", 250, "Troll", 51, "Frost club");
+    warrior p9 = warrior("Alex", 170, "Human", 11, "Diamond sword");
+    archer p10 = archer("George", 180, "Gobilin", 2, "Beginners bow");
 
     joc j1 = joc("Lord of the Rings Game", 60);
     j1.adauga(p1); j1.adauga(p2); j1.adauga(p3); j1.adauga(p4);
@@ -62,6 +55,20 @@ int main() {
     cout << a.distanta_din_centru_pana_la_magazin(0, 0, "Constanta") << endl << endl;
 
     cout << a;
+}
+
+int main() {
+
+    try {
+        f1();
+    }
+    catch(eroare_personaj &error) {
+        cout << error.what() << endl;
+    }
 
     return 0;
 }
+
+
+
+
