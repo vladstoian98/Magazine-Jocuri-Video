@@ -3,6 +3,7 @@
 //
 
 #include "magazin.h"
+#include "eroare_personaj.h"
 
 void magazin::adauga(joc j) {
     jocuri.push_back(j);
@@ -36,7 +37,11 @@ int magazin::pret_total() {
     int s = 0;
     for(const auto & j : jocuri)
     {
-        s = s + j.getPret() *  copii_jocuri;
+        s = s + j.getPret() * copii_jocuri;
     }
+    if(s < 1000 || s > 100000) {
+        throw eroare_pret_total();
+    }
+
     return s;
 }

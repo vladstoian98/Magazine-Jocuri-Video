@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class eroare_personaj : public runtime_error{
+class eroare_personaj : public runtime_error {
 public:
     eroare_personaj(const string &arg);
 };
@@ -23,6 +23,21 @@ public:
 class rase_nefolosite : public eroare_personaj {
 public:
     rase_nefolosite();
+};
+
+class eroare_functionalitate : public runtime_error {
+public:
+    eroare_functionalitate(const string &arg);
+};
+
+class eroare_pret_total : public eroare_functionalitate {
+public:
+    eroare_pret_total();
+};
+
+class eroare_distanta : public eroare_functionalitate {
+public:
+    eroare_distanta();
 };
 
 #endif //MAGAZINE_JOCURI_VIDEO_EROARE_PERSONAJ_H

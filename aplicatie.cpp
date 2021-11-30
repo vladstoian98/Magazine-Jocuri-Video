@@ -3,6 +3,7 @@
 //
 
 #include "aplicatie.h"
+#include "eroare_personaj.h"
 
 void aplicatie::adauga(magazin m) {
     magazine.push_back(m);
@@ -28,6 +29,11 @@ float aplicatie::distanta_din_centru_pana_la_magazin(float x, float y, string or
 
         }
     }
+
+    if(distanta < 0.5 || distanta > 20) {
+        throw eroare_distanta();
+    }
+
    return distanta;
 }
 

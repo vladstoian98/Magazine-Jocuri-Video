@@ -13,3 +13,12 @@ inaltime_invalida::inaltime_invalida() :
 
 rase_nefolosite::rase_nefolosite() :
         eroare_personaj("Aceasta rasa nu poate fi folosita"){}
+
+eroare_functionalitate::eroare_functionalitate(const string &arg) :
+        runtime_error("Eroare functionalitate: " + arg) {}
+
+eroare_pret_total::eroare_pret_total() :
+        eroare_functionalitate("Pretul total al magazinului este invalid") {};
+
+eroare_distanta::eroare_distanta() :
+        eroare_functionalitate("Distanta este una invialida") {};
