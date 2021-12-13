@@ -37,4 +37,18 @@ float aplicatie::distanta_din_centru_pana_la_magazin(float x, float y, string or
    return distanta;
 }
 
+magazin& aplicatie::cautare(const string &nume_oras, int x, int y) {
+    for(auto & i : magazine)
+        if(nume_oras == i.getOras() && x == i.getCoordonataX() && y == i.getCoordonataY())
+            return i;
+    throw eroare_gasire_magazin();
+}
+
+void aplicatie::inlocuire(magazin& m) {
+    m.setOras("Constanta");
+    m.setJudet("Constanta");
+    m.setCoordonataX(2);
+    m.setCoordonataY((3));
+}
+
 

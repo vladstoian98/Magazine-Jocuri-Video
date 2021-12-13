@@ -26,6 +26,7 @@ void f1() {
     warrior p9 = warrior("Alex", 170, "Human", 11, "Diamond sword");
     archer p10 = archer("George", 180, "Gobilin", 2, "Beginners bow");
 
+
     joc j1 = joc("Lord of the Rings Game", 60);
     j1.adauga(p1); j1.adauga(p2); j1.adauga(p3); j1.adauga(p4);
 
@@ -55,6 +56,12 @@ void f1() {
     cout << a.distanta_din_centru_pana_la_magazin(0, 0, "Constanta") << endl << endl;
 
     cout << a;
+
+    cout << p4;
+
+    m1.inlocuire(m1.cautare("Lord of the Rings Game"));
+
+    cout << m1;
 }
 
 int main() {

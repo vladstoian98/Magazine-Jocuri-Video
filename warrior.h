@@ -22,7 +22,7 @@ public:
 
     shared_ptr <personaj> clone() const override;
 
-    friend ostream &operator<<(ostream &os, const warrior &warrior);
+
 
 protected:
     void afis(ostream &os) const override;

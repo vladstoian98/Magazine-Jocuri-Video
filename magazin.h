@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include "joc.h"
+#include "personaj.h"
 
 using namespace std;
 
@@ -26,6 +27,14 @@ public:
 
     const string &getOras() const;
 
+    void setJudet(const string &judet);
+
+    void setOras(const string &oras);
+
+    void setCoordonataX(int coordonataX);
+
+    void setCoordonataY(int coordonataY);
+
     int getCoordonataX() const;
 
     int getCoordonataY() const;
@@ -34,6 +43,9 @@ public:
 
     int pret_total();
 
+    joc& cautare(const string &nume);
+
+    void inlocuire(joc& j);
 };
 
 

@@ -13,6 +13,23 @@ magazin::magazin(const string &nume, const string &judet, const string &oras, in
                  int coordonata_y) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
                                      coordonata_x(coordonata_x), coordonata_y(coordonata_y){}
 
+
+void magazin::setJudet(const string &judet) {
+    magazin::judet = judet;
+}
+
+void magazin::setOras(const string &oras) {
+    magazin::oras = oras;
+}
+
+void magazin::setCoordonataX(int coordonataX) {
+    coordonata_x = coordonataX;
+}
+
+void magazin::setCoordonataY(int coordonataY) {
+    coordonata_y = coordonataY;
+}
+
 const string &magazin::getOras() const {
     return oras;
 }
@@ -45,3 +62,18 @@ int magazin::pret_total() {
 
     return s;
 }
+
+joc& magazin::cautare(const string &nume) {
+    for(auto & j : jocuri)
+        if(nume == j.getNume())
+            return j;
+    throw eroare_gasire_joc();
+}
+
+void magazin::inlocuire(joc &j) {
+    j.setNume("New Super Mario Bros 2");
+    j.setPret(60);
+    j.schimb_personaje(); // vector<shared_ptr<personaj>> &personaje
+
+}
+

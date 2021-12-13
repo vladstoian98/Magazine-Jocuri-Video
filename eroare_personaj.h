@@ -40,4 +40,14 @@ public:
     eroare_distanta();
 };
 
+class eroare_gasire_magazin : public eroare_functionalitate {
+public:
+    eroare_gasire_magazin();
+};
+
+class eroare_gasire_joc : public eroare_functionalitate {
+public:
+    eroare_gasire_joc();
+};
+
 #endif //MAGAZINE_JOCURI_VIDEO_EROARE_PERSONAJ_H

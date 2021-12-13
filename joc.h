@@ -9,6 +9,8 @@
 #include <vector>
 #include <iostream>
 #include <memory>
+#include "warrior.h"
+#include "mage.h"
 
 using namespace std;
 
@@ -21,7 +23,17 @@ public:
 
     joc(const string &nume, int pret);
 
+    void setNume(const string &nume);
+
+    void setPret(int pret);
+
+    const string &getNume() const;
+
     int getPret() const;
+
+    vector<shared_ptr<personaj>> &getPersonaje();
+
+    void schimb_personaje();
 
     friend ostream &operator<<(ostream &os, const joc &joc);
 

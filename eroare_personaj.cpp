@@ -22,3 +22,9 @@ eroare_pret_total::eroare_pret_total() :
 
 eroare_distanta::eroare_distanta() :
         eroare_functionalitate("Distanta este una invialida") {};
+
+eroare_gasire_magazin::eroare_gasire_magazin() :
+        eroare_functionalitate("Nu s-a gasit magazinul") {};
+
+eroare_gasire_joc::eroare_gasire_joc() :
+        eroare_functionalitate("Nu s-a gasit magazinul") {};

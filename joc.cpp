@@ -10,6 +10,18 @@ void joc::adauga(const personaj &personaj_) {
 
 joc::joc(const string &nume, int pret) : nume(nume), pret(pret) {}
 
+void joc::setNume(const string &nume) {
+    joc::nume = nume;
+}
+
+void joc::setPret(int pret) {
+    joc::pret = pret;
+}
+
+const string &joc::getNume() const {
+    return nume;
+}
+
 int joc::getPret() const {
     return pret;
 }
@@ -47,5 +59,24 @@ void joc::welcome_message() {
         personaj->welcome_message();
     }
 }
+
+void joc::schimb_personaje() {
+    personaje.clear();
+    warrior p11 = warrior("Mario", 150, "Human", 99, "Stomping boots");
+    mage p12 = mage("Peach", 170, "Human", 1, "Umbrella");
+    adauga(p11); adauga(p12);
+}
+
+vector<shared_ptr<personaj>> &joc::getPersonaje() {
+    return personaje;
+}
+
+
+
+
+
+
+
+
 
 
