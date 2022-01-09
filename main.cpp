@@ -15,16 +15,16 @@
 using namespace std;
 
 void f1() {
-    warrior p1 = warrior("Gimli", 145, "Dwarf", 15, "Frost staff");
-    archer p2 = archer("Ligolas", 185, "Elf", 21, "Bow of swiftness");
-    mage p3 = mage("Gandalf", 190, "Human", 13, "Earth staff");
-    warrior p4 = warrior("Golum", 120, "unknown", 61, "Fists");
-    warrior p5 = warrior("Vlad", 190, "Human", 99, "Terra sword");
-    mage p6 = mage("Anca", 170, "Human", 99, "Terra prisma");
-    archer p7 = archer("Ashe", 170, "Human", 31, "Frost bow");
-    warrior p8 = warrior("Trundle", 250, "Troll", 51, "Frost club");
-    warrior p9 = warrior("Alex", 170, "Human", 11, "Diamond sword");
-    archer p10 = archer("George", 180, "Gobilin", 2, "Beginners bow");
+    warrior p1 = warrior("Gimli", 145, "Dwarf", 3, 15, "-", {"Sword", "Spear", "Rusty sword"}, "-", {"Sauron", "Demon", "Blood elf"});
+    archer p2 = archer("Ligolas", 185, "Elf", 2, 21, 3);
+    mage p3 = mage("Gandalf", 190, "Human", 2, 6, "Arcane blast", 3);
+    warrior p4 = warrior("Golum", 120, "unknown", 2, 61, "-", {"The Ring", "Fists"}, "-", {"Frodo", "Gimli"});
+    warrior p5 = warrior("Vlad", 190, "Human", 2, 99, "-", {"Terra Sword", "Copper Sword"}, "-", {"Plantera", "Eye of Cthulu"});
+    mage p6 = mage("Anca", 170, "Human", 2, 6, "Charm", 6);
+    archer p7 = archer("Ashe", 170, "Human", 2, 31, 5);
+    warrior p8 = warrior("Trundle", 250, "Troll", 2, 51, "-", {"Frozen club", "Wooden club"}, "-", {"Lissandra", "Ashe"});
+    warrior p9 = warrior("Alex", 170, "Human", 2, 11, "-", {"Diamond sword", "Wooden sword"}, "-", {"Ender Dragon", "Zombie"});
+    archer p10 = archer("George", 180, "Gobilin", 2, 2, 1);
 
 
     joc j1 = joc("Lord of the Rings Game", 60);
@@ -51,6 +51,14 @@ void f1() {
     aplicatie a = aplicatie("Gamestop");
     a.adauga(m1); a.adauga(m2); a.adauga(m3);
 
+
+    j1.welcome_message(p1);
+    j1.welcome_message(p3);
+    j2.welcome_message(p6);
+    j1.welcome_message(p2);
+
+
+
     cout << m3 << endl << endl;
 
     cout << a.distanta_din_centru_pana_la_magazin(0, 0, "Constanta") << endl << endl;
@@ -62,6 +70,7 @@ void f1() {
     m1.inlocuire(m1.cautare("Lord of the Rings Game"));
 
     cout << m1;
+
 }
 
 int main() {

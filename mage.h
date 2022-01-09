@@ -11,12 +11,13 @@
 using namespace std;
 
 class mage : public personaj {
-    int nivel;
-    string weapon;
+    int total_mana;
+    string spell;
+    int spell_cost;
 public:
-    mage(const string &nume, int inaltime, const string &rasa, int nivel, const string &weapon);
+    mage(const string &nume, int inaltime, const string &rasa, int bossNumber, int totalMana, const string &spell, int spellCost);
 
-    void welcome_message() const;
+    void game_ability() override;
 
     ~mage();
 

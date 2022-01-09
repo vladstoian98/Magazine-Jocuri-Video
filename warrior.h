@@ -7,20 +7,29 @@
 
 #include <ostream>
 #include "personaj.h"
+#include <vector>
+#include <string>
 
 using namespace std;
 
 class warrior : public personaj {
     int nivel;
-    string weapon;
-public:
-    warrior(const string &nume, int inaltime, const string &rasa, int nivel, const string &weapon);
+    string main_weapon;
+    vector<string> weapons;
+    string main_foe;
+    vector<string> foes;
 
-    void welcome_message() const;
+
+public:
+    warrior(const string &nume, int inaltime, const string &rasa, int boss_number, int nivel, const string &mainWeapon,
+            const vector<string> &weapons, const string &mainFoe, const vector<string> &foes);
+
+    void game_ability() override;
 
     ~warrior();
 
     shared_ptr <personaj> clone() const override;
+
 
 
 

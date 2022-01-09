@@ -10,11 +10,11 @@ int personaj::id_max = 1;
 
 void personaj::afis(ostream &os) const{
     const auto &personaj = *this;
-    os << personaj.nume << " " << personaj.inaltime << " " << personaj.rasa << endl;
+    os << personaj.nume << " " << personaj.inaltime << " " << personaj.rasa << " " << personaj.boss_number << endl;
 }
 
-personaj::personaj(const string &nume, int inaltime, const string &rasa): nume(nume),
-                    inaltime(inaltime), rasa(rasa), id(id_max){
+personaj::personaj(const string &nume, int inaltime, const string &rasa, int boss_number): nume(nume),
+                                                                                           inaltime(inaltime), rasa(rasa), id(id_max), boss_number(boss_number){
     id_max++;
     if(inaltime < 100 || inaltime > 250)
         throw inaltime_invalida();
@@ -26,11 +26,12 @@ personaj &personaj::operator=(const personaj &copie) {
     this->nume = copie.nume;
     this->inaltime = copie.inaltime;
     this->rasa = copie.rasa;
+    this->boss_number = copie.boss_number;
     return *this;
 }
 
 personaj::personaj(const personaj &copie): id(id_max), nume(copie.nume), inaltime(copie.inaltime),
-                    rasa(copie.rasa){
+                                           rasa(copie.rasa), boss_number(copie.boss_number){
     id_max++;
 }
 
@@ -43,4 +44,8 @@ personaj::~personaj(){}
 
 int personaj::getIdMax(){
     return id_max;
+}
+
+int personaj::getBossNumber() const {
+    return boss_number;
 }

@@ -18,9 +18,10 @@ protected:
     string nume;
     int inaltime; // In centimetri.
     string rasa;
+    int boss_number;
     virtual void afis(ostream &os) const;
 public:
-    personaj(const string &nume, int inaltime, const string &rasa);
+    personaj(const string &nume, int inaltime, const string &rasa, int boss_number);
 
     personaj& operator =(const personaj& copie);
 
@@ -28,13 +29,15 @@ public:
 
     friend ostream &operator<<(ostream &os, const personaj &personaje);
 
-    virtual void welcome_message() const = 0;
+    virtual void game_ability() = 0;
 
     virtual shared_ptr <personaj> clone() const = 0;
 
     virtual ~personaj() = 0;
 
     static int getIdMax();
+
+    int getBossNumber() const;
 };
 
 

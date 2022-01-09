@@ -53,17 +53,16 @@ void swap(joc &j1, joc &j2) {
 
 joc::~joc() {}
 
-void joc::welcome_message() {
-    for(auto &personaj: personaje) {
-        cout << "Bine ai venit in jocul " << nume << "!\n";
-        personaj->welcome_message();
-    }
+void joc::welcome_message(personaj& p) {
+    int dimensiune = p.getBossNumber();
+    for(int i = 1 ; i <= dimensiune ; i++)
+        p.game_ability();
 }
 
 void joc::schimb_personaje() {
     personaje.clear();
-    warrior p11 = warrior("Mario", 150, "Human", 99, "Stomping boots");
-    mage p12 = mage("Peach", 170, "Human", 1, "Umbrella");
+    warrior p11 = warrior("Mario", 150, "Human", 2, 99, "-", {"Heavy stomping boots","Stomping boots"}, "-", {"Bowser", "Goomba"});
+    mage p12 = mage("Peach", 170, "Human", 2, 6, "Umbrella blast", 2);
     adauga(p11); adauga(p12);
 }
 

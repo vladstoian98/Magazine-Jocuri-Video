@@ -45,7 +45,7 @@ public:
 
     ~joc();
 
-    void welcome_message();
+    void welcome_message(personaj& p);
 };
 
 

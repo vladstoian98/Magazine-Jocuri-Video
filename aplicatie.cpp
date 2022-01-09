@@ -34,7 +34,7 @@ float aplicatie::distanta_din_centru_pana_la_magazin(float x, float y, string or
         throw eroare_distanta();
     }
 
-   return distanta;
+    return distanta;
 }
 
 magazin& aplicatie::cautare(const string &nume_oras, int x, int y) {

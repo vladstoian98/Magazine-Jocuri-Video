@@ -12,11 +12,11 @@ using namespace std;
 
 class archer : public personaj {
     int nivel;
-    string weapon;
+    int damage_delt;
 public:
-    archer(const string &nume, int inaltime, const string &rasa, int nivel, const string &weapon);
+    archer(const string &nume, int inaltime, const string &rasa, int bossNumber, int nivel, int damageDelt);
 
-    void welcome_message() const;
+    void game_ability() override;
 
     ~archer();
 
