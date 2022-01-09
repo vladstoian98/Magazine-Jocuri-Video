@@ -44,11 +44,11 @@ magazin& aplicatie::cautare(const string &nume_oras, int x, int y) {
     throw eroare_gasire_magazin();
 }
 
-void aplicatie::inlocuire(magazin& m) {
-    m.setOras("Constanta");
-    m.setJudet("Constanta");
-    m.setCoordonataX(2);
-    m.setCoordonataY((3));
+void aplicatie::inlocuire(magazin& m, string oras, string judet, int coordonata_x, int coordonata_y) {
+    m.setOras(oras);
+    m.setJudet(judet);
+    m.setCoordonataX(coordonata_x);
+    m.setCoordonataY(coordonata_y);
 }
 
 

@@ -70,10 +70,9 @@ joc& magazin::cautare(const string &nume) {
     throw eroare_gasire_joc();
 }
 
-void magazin::inlocuire(joc &j) {
-    j.setNume("New Super Mario Bros 2");
-    j.setPret(60);
+void magazin::inlocuire(joc &j, string nume_joc, int pret_joc) {
+    j.setNume(nume_joc);
+    j.setPret(pret_joc);
     j.schimb_personaje(); // vector<shared_ptr<personaj>> &personaje
-
 }
 

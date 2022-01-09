@@ -59,11 +59,10 @@ void joc::welcome_message(personaj& p) {
         p.game_ability();
 }
 
-void joc::schimb_personaje() {
+void joc::schimb_personaje(vector<shared_ptr<personaj>> v) {
     personaje.clear();
-    warrior p11 = warrior("Mario", 150, "Human", 2, 99, "-", {"Heavy stomping boots","Stomping boots"}, "-", {"Bowser", "Goomba"});
-    mage p12 = mage("Peach", 170, "Human", 2, 6, "Umbrella blast", 2);
-    adauga(p11); adauga(p12);
+    for(const auto p : v)
+        adauga(*p);
 }
 
 vector<shared_ptr<personaj>> &joc::getPersonaje() {

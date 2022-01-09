@@ -33,7 +33,7 @@ public:
 
     vector<shared_ptr<personaj>> &getPersonaje();
 
-    void schimb_personaje();
+    void schimb_personaje(vector<shared_ptr<personaj>> v);
 
     friend ostream &operator<<(ostream &os, const joc &joc);
 

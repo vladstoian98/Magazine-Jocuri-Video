@@ -26,7 +26,7 @@ public:
 
     magazin& cautare(const string &nume_oras, int x, int y);
 
-    void inlocuire(magazin& m); // Schimb locatia unui magazin, adica orasul, judetul si coordonatele (numele magazinului si stocul de jocuri ale acestuia raman la fel).
+    void inlocuire(magazin& m, string oras, string judet, int coordonata_x, int coordonata_y); // Schimb locatia unui magazin, adica orasul, judetul si coordonatele (numele magazinului si stocul de jocuri ale acestuia raman la fel).
 };
 
 

@@ -67,7 +67,7 @@ void f1() {
 
     cout << p4;
 
-    m1.inlocuire(m1.cautare("Lord of the Rings Game"));
+    m1.inlocuire(m1.cautare("Lord of the Rings Game"), "Super Mario Bros", 60);
 
     cout << m1;
 
