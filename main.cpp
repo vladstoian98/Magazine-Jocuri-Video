@@ -54,7 +54,7 @@ void f1() {
 
     vector<shared_ptr<personaj>> v;
 
-    v.push_back(p1);
+
 
     j1.welcome_message(p1);
     j1.welcome_message(p3);
@@ -71,7 +71,7 @@ void f1() {
 
     cout << p4;
 
-    m1.inlocuire(m1.cautare("Lord of the Rings Game"), "Super Mario Bros", 60, {p2});
+    m1.inlocuire(m1.cautare("Lord of the Rings Game"), "Super Mario Bros", 60, {make_shared<warrior>(p1), make_shared<archer>(p2)});
 
     cout << m1;
 
