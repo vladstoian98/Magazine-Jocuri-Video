@@ -70,9 +70,9 @@ joc& magazin::cautare(const string &nume) {
     throw eroare_gasire_joc();
 }
 
-void magazin::inlocuire(joc &j, string nume_joc, int pret_joc) {
+void magazin::inlocuire(joc &j, string nume_joc, int pret_joc, vector<shared_ptr<personaj>> v) {
     j.setNume(nume_joc);
     j.setPret(pret_joc);
-    j.schimb_personaje(); // vector<shared_ptr<personaj>> &personaje
+    j.schimb_personaje(v);
 }
 

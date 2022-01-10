@@ -45,7 +45,7 @@ public:
 
     joc& cautare(const string &nume);
 
-    void inlocuire(joc& j, string nume_joc, int pret_joc);
+    void inlocuire(joc& j, string nume_joc, int pret_joc, vector<shared_ptr<personaj>> v);
 };
 
 

@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstring>
 #include <cmath>
+#include <memory>
 
 #include "personaj.h"
 #include "joc.h"
@@ -51,6 +52,9 @@ void f1() {
     aplicatie a = aplicatie("Gamestop");
     a.adauga(m1); a.adauga(m2); a.adauga(m3);
 
+    vector<shared_ptr<personaj>> v;
+
+    v.push_back(p1);
 
     j1.welcome_message(p1);
     j1.welcome_message(p3);
@@ -67,7 +71,7 @@ void f1() {
 
     cout << p4;
 
-    m1.inlocuire(m1.cautare("Lord of the Rings Game"), "Super Mario Bros", 60);
+    m1.inlocuire(m1.cautare("Lord of the Rings Game"), "Super Mario Bros", 60, {p2});
 
     cout << m1;
 
