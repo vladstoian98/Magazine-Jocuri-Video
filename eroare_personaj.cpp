@@ -6,7 +6,7 @@
 #include <string>
 
 eroare_personaj::eroare_personaj(const string &arg) :
-        runtime_error("Eroare cantec: " + arg) {}
+        runtime_error("Eroare personaj:: " + arg) {}
 
 inaltime_invalida::inaltime_invalida() :
         eroare_personaj("Inaltime invalida") {}
