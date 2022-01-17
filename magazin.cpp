@@ -11,8 +11,8 @@ void magazin<T>::adauga(joc j) {
 }
 
 template <typename T>
-magazin<T>::magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, T coordonata_x,
-                 T coordonata_y) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
+magazin<T>::magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x,
+                    const T& coordonata_y) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
                                      coordonata_x(coordonata_x), coordonata_y(coordonata_y){}
 
 template <typename T>

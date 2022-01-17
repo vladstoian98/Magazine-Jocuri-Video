@@ -13,6 +13,12 @@
 using namespace std;
 
 template <typename T>
+class aplicatie;
+
+template <typename T>
+ostream& operator<<(ostream& os, const aplicatie<T>& c);
+
+template <typename T>
 class aplicatie {
     string nume;
     vector<magazin<T>> magazine;
@@ -21,9 +27,9 @@ public:
 
     aplicatie(const string &nume);
 
-    friend ostream &operator<<(ostream &os, const aplicatie &aplicatie);
+    friend ostream &operator<< <>(ostream &, const aplicatie &);
 
-    float distanta_din_centru_pana_la_magazin(<T> x, <T> y, string oras);
+    float distanta_din_centru_pana_la_magazin(int x, int y, string oras);
 
     magazin<T>& cautare(const string &nume_oras, T x, T y);
 

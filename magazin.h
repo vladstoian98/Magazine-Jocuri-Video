@@ -13,6 +13,13 @@
 using namespace std;
 
 template <typename T>
+class magazin;
+
+template <typename T>
+ostream& operator<<(ostream& os, const magazin<T> &magazine);
+
+
+template <typename T>
 class magazin {
     string nume;
     string judet;
@@ -24,7 +31,7 @@ class magazin {
 public:
     void adauga(joc j);
 
-    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, T coordonata_x, T coordonata_y);
+    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x, const T& coordonata_y);
 
     const string &getOras() const;
 
@@ -40,13 +47,15 @@ public:
 
     int getCoordonataY() const;
 
-    friend ostream &operator<<(ostream &os, const magazin &magazine);
+    friend ostream &operator<< <>(ostream &, const magazin<T>&);
 
     int pret_total();
 
     joc& cautare(const string &nume);
 
     void inlocuire(joc& j, string nume_joc, int pret_joc, vector<shared_ptr<personaj>> v);
+
+    magazin(const T& x);
 };
 
 

@@ -5,14 +5,16 @@
 #include "aplicatie.h"
 #include "eroare_personaj.h"
 
-
-void aplicatie::adauga(magazin<T> m) {
+template <typename T>
+void aplicatie<T>::adauga(magazin<T> m) {
     magazine.push_back(m);
 }
 
-aplicatie::aplicatie(const string &nume) : nume(nume) {}
+template <typename T>
+aplicatie<T>::aplicatie(const string &nume) : nume(nume) {}
 
-ostream &operator<<(ostream &os, const aplicatie &aplicatie) {
+template <typename T>
+ostream &operator<<(ostream &os, const aplicatie<T> &aplicatie) {
     os << aplicatie.nume << endl << endl;
     for(const auto & m : aplicatie.magazine)
         os << m;
@@ -20,7 +22,8 @@ ostream &operator<<(ostream &os, const aplicatie &aplicatie) {
     return os;
 }
 
-float aplicatie::distanta_din_centru_pana_la_magazin(T x, T y, string oras) {
+template <typename T>
+float aplicatie<T>::distanta_din_centru_pana_la_magazin(int x, int y, string oras) {
     float distanta;
     for(const auto & m : magazine)
     {
@@ -38,14 +41,16 @@ float aplicatie::distanta_din_centru_pana_la_magazin(T x, T y, string oras) {
     return distanta;
 }
 
-magazin& aplicatie::cautare(const string &nume_oras, int x, int y) {
+template <typename T>
+magazin<T>& aplicatie<T>::cautare(const string &nume_oras, T x, T y) {
     for(auto & i : magazine)
         if(nume_oras == i.getOras() && x == i.getCoordonataX() && y == i.getCoordonataY())
             return i;
     throw eroare_gasire_magazin();
 }
 
-void aplicatie::inlocuire(magazin& m, string oras, string judet, int coordonata_x, int coordonata_y) {
+template <typename T>
+void aplicatie<T>::inlocuire(magazin<T>& m, string oras, string judet, T coordonata_x, T coordonata_y) {
     m.setOras(oras);
     m.setJudet(judet);
     m.setCoordonataX(coordonata_x);

@@ -49,8 +49,8 @@ void f1() {
     magazin<int> m3 = magazin<int>("Game Company", "Tulcea", "Tulcea", 50, 1, 1);
     m3.adauga(j1); m3.adauga(j2); m3.adauga(j3); m3.adauga(j4);
 
-    aplicatie a = aplicatie("Gamestop");
-    a.adauga(m1); a.adauga(m2); a.adauga(m3);
+    aplicatie<int> a = aplicatie<int>("Gamestop");
+    a.adauga(m1); a.adauga(m3);
 
     vector<shared_ptr<personaj>> v;
 

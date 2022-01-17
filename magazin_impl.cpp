@@ -7,3 +7,9 @@
 template class magazin<int>;
 template class magazin<double>;
 
+template
+ostream& operator<< <>(ostream& os, const magazin<int>& x);
+
+template
+ostream& operator<< <>(ostream& os, const magazin<double>& x);
+
