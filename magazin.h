@@ -12,18 +12,19 @@
 
 using namespace std;
 
+template <typename T>
 class magazin {
     string nume;
     string judet;
     string oras;
     int copii_jocuri;
-    int coordonata_x;
-    int coordonata_y;
+    T coordonata_x;
+    T coordonata_y;
     vector<joc> jocuri;
 public:
     void adauga(joc j);
 
-    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, int coordonata_x, int coordonata_y);
+    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, T coordonata_x, T coordonata_y);
 
     const string &getOras() const;
 
@@ -31,9 +32,9 @@ public:
 
     void setOras(const string &oras);
 
-    void setCoordonataX(int coordonataX);
+    void setCoordonataX(T coordonataX);
 
-    void setCoordonataY(int coordonataY);
+    void setCoordonataY(T coordonataY);
 
     int getCoordonataX() const;
 

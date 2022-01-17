@@ -5,7 +5,8 @@
 #include "aplicatie.h"
 #include "eroare_personaj.h"
 
-void aplicatie::adauga(magazin m) {
+
+void aplicatie::adauga(magazin<T> m) {
     magazine.push_back(m);
 }
 
@@ -19,7 +20,7 @@ ostream &operator<<(ostream &os, const aplicatie &aplicatie) {
     return os;
 }
 
-float aplicatie::distanta_din_centru_pana_la_magazin(float x, float y, string oras) {
+float aplicatie::distanta_din_centru_pana_la_magazin(T x, T y, string oras) {
     float distanta;
     for(const auto & m : magazine)
     {

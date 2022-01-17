@@ -5,44 +5,53 @@
 #include "magazin.h"
 #include "eroare_personaj.h"
 
-void magazin::adauga(joc j) {
+template <typename T>
+void magazin<T>::adauga(joc j) {
     jocuri.push_back(j);
 }
 
-magazin::magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, int coordonata_x,
-                 int coordonata_y) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
+template <typename T>
+magazin<T>::magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, T coordonata_x,
+                 T coordonata_y) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
                                      coordonata_x(coordonata_x), coordonata_y(coordonata_y){}
 
-
-void magazin::setJudet(const string &judet) {
-    magazin::judet = judet;
+template <typename T>
+void magazin<T>::setJudet(const string &judet) {
+    magazin<T>::judet = judet;
 }
 
-void magazin::setOras(const string &oras) {
-    magazin::oras = oras;
+template <typename T>
+void magazin<T>::setOras(const string &oras) {
+    magazin<T>::oras = oras;
 }
 
-void magazin::setCoordonataX(int coordonataX) {
+template <typename T>
+void magazin<T>::setCoordonataX(T coordonataX) {
     coordonata_x = coordonataX;
 }
 
-void magazin::setCoordonataY(int coordonataY) {
+template <typename T>
+void magazin<T>::setCoordonataY(T coordonataY) {
     coordonata_y = coordonataY;
 }
 
-const string &magazin::getOras() const {
+template <typename T>
+const string &magazin<T>::getOras() const {
     return oras;
 }
 
-int magazin::getCoordonataX() const {
+template <typename T>
+int magazin<T>::getCoordonataX() const {
     return coordonata_x;
 }
 
-int magazin::getCoordonataY() const {
+template <typename T>
+int magazin<T>::getCoordonataY() const {
     return coordonata_y;
 }
 
-ostream &operator<<(ostream &os, const magazin &magazine) {
+template <typename T>
+ostream &operator<<(ostream &os, const magazin<T> &magazine) {
     os << magazine.nume << " " << magazine.judet << " " << magazine.oras << " "<< endl << endl;
     for(const auto & j : magazine.jocuri)
         os << j ;
@@ -50,7 +59,8 @@ ostream &operator<<(ostream &os, const magazin &magazine) {
     return os;
 }
 
-int magazin::pret_total() {
+template <typename T>
+int magazin<T>::pret_total() {
     int s = 0;
     for(const auto & j : jocuri)
     {
@@ -63,14 +73,16 @@ int magazin::pret_total() {
     return s;
 }
 
-joc& magazin::cautare(const string &nume) {
+template <typename T>
+joc& magazin<T>::cautare(const string &nume) {
     for(auto & j : jocuri)
         if(nume == j.getNume())
             return j;
     throw eroare_gasire_joc();
 }
 
-void magazin::inlocuire(joc &j, string nume_joc, int pret_joc, vector<shared_ptr<personaj>> v) {
+template <typename T>
+void magazin<T>::inlocuire(joc &j, string nume_joc, int pret_joc, vector<shared_ptr<personaj>> v) {
     j.setNume(nume_joc);
     j.setPret(pret_joc);
     j.schimb_personaje(v);

@@ -40,13 +40,13 @@ void f1() {
     joc j4 = joc("Terraria", 15);
     j4.adauga(p9); j4.adauga(p10);
 
-    magazin m1 = magazin("Gamex", "Constanta", "Constanta", 30, 5, 5);
+    magazin<int> m1 = magazin<int>("Gamex", "Constanta", "Constanta", 30, 5, 5);
     m1.adauga(j1); m1.adauga(j2); m1.adauga(j3);
 
-    magazin m2 = magazin("ING", "Sector 3", "Bucuresti", 40, 2, 3);
+    magazin<double> m2 = magazin<double>("ING", "Sector 3", "Bucuresti", 40, 2.1, 3.32);
     m2.adauga(j2); m2.adauga(j3); m2.adauga(j4);
 
-    magazin m3 = magazin("Game Company", "Tulcea", "Tulcea", 50, 1, 1);
+    magazin<int> m3 = magazin<int>("Game Company", "Tulcea", "Tulcea", 50, 1, 1);
     m3.adauga(j1); m3.adauga(j2); m3.adauga(j3); m3.adauga(j4);
 
     aplicatie a = aplicatie("Gamestop");

@@ -12,21 +12,22 @@
 
 using namespace std;
 
+template <typename T>
 class aplicatie {
     string nume;
-    vector<magazin> magazine;
+    vector<magazin<T>> magazine;
 public:
-    void adauga(magazin m);
+    void adauga(magazin<T> m);
 
     aplicatie(const string &nume);
 
     friend ostream &operator<<(ostream &os, const aplicatie &aplicatie);
 
-    float distanta_din_centru_pana_la_magazin(float x, float y, string oras);
+    float distanta_din_centru_pana_la_magazin(<T> x, <T> y, string oras);
 
-    magazin& cautare(const string &nume_oras, int x, int y);
+    magazin<T>& cautare(const string &nume_oras, T x, T y);
 
-    void inlocuire(magazin& m, string oras, string judet, int coordonata_x, int coordonata_y); // Schimb locatia unui magazin, adica orasul, judetul si coordonatele (numele magazinului si stocul de jocuri ale acestuia raman la fel).
+    void inlocuire(magazin<T>& m, string oras, string judet, T coordonata_x, T coordonata_y); // Schimb locatia unui magazin, adica orasul, judetul si coordonatele (numele magazinului si stocul de jocuri ale acestuia raman la fel).
 };
 
 
