@@ -33,7 +33,7 @@ public:
 
     magazin<T>& cautare(const string &nume_oras, T x, T y);
 
-    void inlocuire(magazin<T>& m, string oras, string judet, T coordonata_x, T coordonata_y); // Schimb locatia unui magazin, adica orasul, judetul si coordonatele (numele magazinului si stocul de jocuri ale acestuia raman la fel).
+    void inlocuire(magazin<T>& m, string oras, string judet, T coordonata_x, T coordonata_y, const vector<set_lego> &legos); // Schimb locatia unui magazin, adica orasul, judetul si coordonatele (numele magazinului si stocul de jocuri ale acestuia raman la fel).
 };
 
 

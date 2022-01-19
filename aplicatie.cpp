@@ -50,11 +50,12 @@ magazin<T>& aplicatie<T>::cautare(const string &nume_oras, T x, T y) {
 }
 
 template <typename T>
-void aplicatie<T>::inlocuire(magazin<T>& m, string oras, string judet, T coordonata_x, T coordonata_y) {
+void aplicatie<T>::inlocuire(magazin<T>& m, string oras, string judet, T coordonata_x, T coordonata_y, const vector<set_lego> &legos) {
     m.setOras(oras);
     m.setJudet(judet);
     m.setCoordonataX(coordonata_x);
     m.setCoordonataY(coordonata_y);
+    m.setLegos(legos);
 }
 
 

@@ -9,6 +9,7 @@
 #include <string>
 #include "joc.h"
 #include "personaj.h"
+#include "set_lego_builder.h"
 
 using namespace std;
 
@@ -17,7 +18,6 @@ class magazin;
 
 template <typename T>
 ostream& operator<<(ostream& os, const magazin<T> &magazine);
-
 
 template <typename T>
 class magazin {
@@ -28,10 +28,11 @@ class magazin {
     T coordonata_x;
     T coordonata_y;
     vector<joc> jocuri;
+    vector<set_lego> legos;
 public:
     void adauga(joc j);
 
-    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x, const T& coordonata_y);
+    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x, const T& coordonata_y, const vector<set_lego> &legos);
 
     const string &getOras() const;
 
@@ -42,6 +43,8 @@ public:
     void setCoordonataX(T coordonataX);
 
     void setCoordonataY(T coordonataY);
+
+    void setLegos(const vector<set_lego> &legos);
 
     int getCoordonataX() const;
 

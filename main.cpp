@@ -12,6 +12,7 @@
 #include "archer.h"
 #include "mage.h"
 #include "eroare_personaj.h"
+#include "set_lego_builder.h"
 
 using namespace std;
 
@@ -61,7 +62,11 @@ void f1() {
     j2.welcome_message(p6);
     j1.welcome_message(p2);
 
+    set_lego_builder l;
 
+    set_lego l1 = l.nr_oameni(3).nr_piese_constructie(100).nr_piese_rezerva(15).nr_sticker(5).tip_oameni("pompieri").tip_piese("plastic colorat").tip_sticker("stickere pentru masina de pompieri").nume("masina pompieri").build();
+
+    set_lego l2 = l.nr_oameni(5).nr_piese_constructie(120).nr_piese_rezerva(20).tip_oameni("campioni").tip_piese("plastic high quality").nume("Summoners Rift").build();
 
     cout << m3 << endl << endl;
 

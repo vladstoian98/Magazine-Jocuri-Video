@@ -12,8 +12,8 @@ void magazin<T>::adauga(joc j) {
 
 template <typename T>
 magazin<T>::magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x,
-                    const T& coordonata_y) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
-                                     coordonata_x(coordonata_x), coordonata_y(coordonata_y){}
+                    const T& coordonata_y, const vector<set_lego> &legos) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
+                                     coordonata_x(coordonata_x), coordonata_y(coordonata_y), legos(legos){}
 
 template <typename T>
 void magazin<T>::setJudet(const string &judet) {
@@ -54,7 +54,10 @@ template <typename T>
 ostream &operator<<(ostream &os, const magazin<T> &magazine) {
     os << magazine.nume << " " << magazine.judet << " " << magazine.oras << " "<< endl << endl;
     for(const auto & j : magazine.jocuri)
-        os << j ;
+        os << j;
+    os << endl;
+    for(const auto & j : magazine.legos)
+        os << j;
     os << endl;
     return os;
 }
@@ -86,5 +89,10 @@ void magazin<T>::inlocuire(joc &j, string nume_joc, int pret_joc, vector<shared_
     j.setNume(nume_joc);
     j.setPret(pret_joc);
     j.schimb_personaje(v);
+}
+
+template<typename T>
+void magazin<T>::setLegos(const vector<set_lego> &legos) {
+    magazin::legos = legos;
 }
 
