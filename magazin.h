@@ -10,6 +10,7 @@
 #include "joc.h"
 #include "personaj.h"
 #include "set_lego_builder.h"
+#include "consola_video.h"
 
 using namespace std;
 
@@ -29,10 +30,11 @@ class magazin {
     T coordonata_y;
     vector<joc> jocuri;
     vector<set_lego> legos;
+    vector<consola_video> console;
 public:
     void adauga(joc j);
 
-    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x, const T& coordonata_y, const vector<set_lego> &legos);
+    magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x, const T& coordonata_y, const vector<set_lego> &legos, const vector<consola_video> &console);
 
     const string &getOras() const;
 
@@ -45,6 +47,8 @@ public:
     void setCoordonataY(T coordonataY);
 
     void setLegos(const vector<set_lego> &legos);
+
+    void setConsole(const vector<consola_video> &console);
 
     int getCoordonataX() const;
 

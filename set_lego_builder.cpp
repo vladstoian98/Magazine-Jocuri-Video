@@ -42,3 +42,10 @@ set_lego_builder &set_lego_builder::nume(const string &n) {
     l.nume = n;
     return *this;
 }
+
+ostream &operator<<(ostream &os, const set_lego &lego) {
+    os << lego.nr_oameni << " " << lego.nr_piese_constructie << " "
+    << lego.nr_piese_rezerva << " " << lego.nr_sticker << " " << lego.tip_oameni << " " << lego.tip_piese << " " << lego.tip_sticker << " "<< lego.nume << endl << endl;
+    return os;
+}
+

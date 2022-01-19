@@ -23,6 +23,8 @@ class set_lego {
     friend class set_lego_builder;
 public:
     set_lego() = default;
+
+    friend ostream &operator<<(ostream &os, const set_lego &lego);
 };
 
 class set_lego_builder {
@@ -51,6 +53,7 @@ public:
 
     set_lego build();
 };
+
 
 
 #endif //MAGAZINE_JOCURI_VIDEO_SET_LEGO_BUILDER_H

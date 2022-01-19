@@ -12,8 +12,8 @@ void magazin<T>::adauga(joc j) {
 
 template <typename T>
 magazin<T>::magazin(const string &nume, const string &judet, const string &oras, int copii_jocuri, const T& coordonata_x,
-                    const T& coordonata_y, const vector<set_lego> &legos) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
-                                     coordonata_x(coordonata_x), coordonata_y(coordonata_y), legos(legos){}
+                    const T& coordonata_y, const vector<set_lego> &legos, const vector<consola_video> &console) : nume(nume), judet(judet), oras(oras), copii_jocuri(copii_jocuri),
+                                     coordonata_x(coordonata_x), coordonata_y(coordonata_y), legos(legos), console(console){}
 
 template <typename T>
 void magazin<T>::setJudet(const string &judet) {
@@ -58,7 +58,9 @@ ostream &operator<<(ostream &os, const magazin<T> &magazine) {
     os << endl;
     for(const auto & j : magazine.legos)
         os << j;
-    os << endl;
+    for(const auto & j : magazine.console)
+        os << j;
+    os << endl << endl;
     return os;
 }
 
@@ -94,5 +96,10 @@ void magazin<T>::inlocuire(joc &j, string nume_joc, int pret_joc, vector<shared_
 template<typename T>
 void magazin<T>::setLegos(const vector<set_lego> &legos) {
     magazin::legos = legos;
+}
+
+template<typename T>
+void magazin<T>::setConsole(const vector<consola_video> &console) {
+    magazin::console = console;
 }
 
